@@ -90,7 +90,7 @@ module.exports = function (grunt) {
         cwd: 'prebuild/',
         // Use 'prebuild/' como diretório de origem
         src: '*.html',
-        dest: 'dist/' // Use 'dist/' como diretório de destino
+        dest: 'dist/' // Remova o espaço extra do nome do diretório 'dist'
 
       }
     }
