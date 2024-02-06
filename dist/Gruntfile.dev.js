@@ -59,9 +59,8 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           flatten: true,
-          src: ['src/index.html'],
-          dest: 'prebuild/' // Use 'prebuild/' como diretório temporário
-
+          src: ['prebuild/index.html'],
+          dest: 'dist/'
         }]
       }
     },
@@ -83,16 +82,6 @@ module.exports = function (grunt) {
           'dist/scripts/main.min.js': 'src/scripts/main.js'
         }
       }
-    },
-    copy: {
-      main: {
-        expand: true,
-        cwd: 'prebuild/',
-        // Use 'prebuild/' como diretório de origem
-        src: '*.html',
-        dest: 'dist/' // Remova o espaço extra do nome do diretório 'dist'
-
-      }
     }
   });
   grunt.loadNpmTasks('grunt-contrib-less');
@@ -101,9 +90,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-copy'); // Carregue a tarefa 'copy'
-
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean', 'uglify', 'copy']); // Adicione 'copy' às tarefas de construção
+  grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean', 'uglify']);
 };
 //# sourceMappingURL=Gruntfile.dev.js.map
