@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["main.scss"],"sourcesContent":["$corDeFundo: red;\r\n\r\nbody {\r\n    background-color: $corDeFundo;\r\n}"],"file":"main.css"}
